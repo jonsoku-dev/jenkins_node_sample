@@ -17,7 +17,7 @@ node {
       customImage = docker.build("the2792/docker-nodejs-demo")
    }
    stage('docker push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub') {
+     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
        customImage.push(":${commit_id}")
        customImage.push("latest")
      }
