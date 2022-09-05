@@ -18,7 +18,7 @@ node {
    }
    stage('docker push') {
      docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-       customImage.push(":${commit_id}")
+       customImage.push("${commit_id}")
        customImage.push("latest")
      }
    }
